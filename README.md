@@ -1,2 +1,3 @@
-# courses
+# Courses
+
 My public courses
