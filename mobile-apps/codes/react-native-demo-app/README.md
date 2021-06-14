@@ -5,7 +5,7 @@
 Esta aplicación busca entregar conceptos relacionados a los siguientes puntos.
 
 - Entender el ciclo de vida de los componentes dentro de la aplicación utilizando [React Hooks](https://es.reactjs.org/docs/hooks-intro.html).
-- Navegación dentro de la App utilizando.
+- Navegación dentro de la App utilizando _React Navigation_.
 - Consumir API REST.
 - Consumir API GraphQL.
 - Persistencia de datos (storage local).
@@ -283,7 +283,7 @@ Instalar [Android Studio](https://developer.android.com/studio) y seguir la sigu
 
 Si estás en Windows, no es posible. Sólo podrás vía conexión física de un dispositivo testear para iOS.
 
-Si tienes un Mac, seguir la siguiente guía oficial: https://docs.expo.io/workflow/ios-simulator/, pero básicamente ex tener instalado XCode y watchman.
+Si tienes un Mac, seguir la siguiente guía oficial: https://docs.expo.io/workflow/ios-simulator/, pero básicamente es tener instalado XCode y watchman.
 
 ### ¿Tengo otro problema?
 
