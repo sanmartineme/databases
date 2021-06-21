@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { gql, useLazyQuery, useQuery } from "@apollo/client";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { Icon } from "react-native-elements";
+import { useIsFocused } from "@react-navigation/native";
 
-import { ListItem } from "./components";
+import { AppText, ListItem } from "./components";
+import { LocalStorage, mapColor } from "./utils";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,6 +13,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "flex-start",
+  },
+
+  addButton: {
+    position: "absolute",
+    bottom: 25,
+    right: 25,
   },
 });
 
@@ -42,7 +51,7 @@ const COUNTRY_NAME = gql`
   }
 `;
 
-const WeatherViewItem = ({ countryQuery }: any) => {
+const WeatherViewItem = ({ countryQuery, onDeleteCallback }: any) => {
   const { data, loading, error } = useQuery(WEATHER_BY_CITY, {
     variables: {
       name: countryQuery,
@@ -82,10 +91,6 @@ const WeatherViewItem = ({ countryQuery }: any) => {
 
   const { name, weather } = data?.getCityByName;
 
-  const onDeleteHandle = (city: string) => {
-    alert(city);
-  };
-
   return (
     <ListItem
       city={name}
@@ -93,33 +98,64 @@ const WeatherViewItem = ({ countryQuery }: any) => {
       current={weather.temperature.actual}
       min={weather.temperature.min}
       max={weather.temperature.max}
-      onDeleteCallback={onDeleteHandle}
+      onDeleteCallback={onDeleteCallback}
     />
   );
 };
 
-export const WeatherView = () => {
+export const WeatherView = ({ navigation }: any) => {
+  const [listState, setListState] = useState<string[]>([]);
+  const isFocused = useIsFocused();
+
+  const loadCountries = async () => {
+    const data = await LocalStorage.getCities();
+
+    setListState(data);
+  };
+
+  useEffect(() => {
+    loadCountries();
+  }, [isFocused]);
+
+  const onDeleteHandle = async (city: string) => {
+    await LocalStorage.removeCity(city);
+    await loadCountries();
+  };
+
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        {[
-          "Santiago",
-          "La Paz",
-          "New York",
-          "Monaco",
-          "Bogota",
-          "Rio de Janeiro",
-          "Los Angeles",
-          "Curico",
-          "Valparaiso",
-        ].map((country, index) => {
-          return (
-            <View key={index}>
-              <WeatherViewItem countryQuery={country} />
-            </View>
-          );
-        })}
+    <View style={styles.container}>
+      <ScrollView>
+        <View style={styles.container}>
+          {listState.length > 0 ? (
+            listState.map((country, index) => {
+              return (
+                <View key={index}>
+                  <WeatherViewItem
+                    countryQuery={country}
+                    onDeleteCallback={onDeleteHandle}
+                  />
+                </View>
+              );
+            })
+          ) : (
+            <AppText
+              style={{ marginTop: 60 }}
+              text="No hay ciudades configuradas..."
+              fontSize={16}
+            />
+          )}
+        </View>
+      </ScrollView>
+
+      <View style={styles.addButton}>
+        <Icon
+          name="add-outline"
+          type="ionicon"
+          color={mapColor("tertiary")}
+          size={48}
+          onPress={() => navigation.navigate("AddCountryView")}
+        />
       </View>
-    </ScrollView>
+    </View>
   );
 };

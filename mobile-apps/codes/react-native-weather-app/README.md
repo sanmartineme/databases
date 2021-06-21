@@ -12,4 +12,8 @@ yarn add react-native-elements
 
 # GraphQL client
 yarn add @apollo/client graphql
+
+# Local Storage
+
+yarn add @react-native-async-storage/async-storage
 ```
