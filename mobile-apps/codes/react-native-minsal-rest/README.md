@@ -1,4 +1,4 @@
-# :iphone: Yelp App GraphQL :iphone:
+# :iphone: App API MINSAL :iphone:
 
 App que consume datos desde la API del MINSAL (Minesterio de Salud de Chile).
 
