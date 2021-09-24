@@ -14,13 +14,51 @@ El alumno después del curso será capaz de:
 ### I. Introducción
 
 - ¿Qué es una base de datos?
+- Gestores de base de datos
+- Estado actual y principales desafíos
+- Arquitectura
+- Tendencias
+- Principales actores
 
 ### II. Base de datos relaciones
 
+- ¿Por qué existen?
+- Componentes de abstracción
+- Principales vendors
+- Conceptos avanzados
+  - Procedimientos almacenados y funciones
+  - Triggers
+  - Indexación
+  - Particiones
+  - Monitoreo (\*)
+  - Jobs (\*)
+  - Backups (\*)
+
+(\*) Conceptual y no práctico.
+
 ### III. Base de datos no relacionales
+
+- ¿Por qué existen?
+- Componentes de abstracción
+- Principales vendors
+- BBDD documental: Mongo DB
+  - Conceptos base documental
+  - Operaciones CRUD
+- BBDD key-value: Apache Cassandra
+  - Conceptos de una base key-value
+  - Operaciones CRUD
+- Otros tipos de base de datos no relacionales
 
 ### IV. Criterios de selección
 
 - Software
 - Inteligencia de negocios
 - Machine Learning
+
+## 🔨 Herramientas a utilizar
+
+- Docker
+- Postgres
+- MS SQL Server
+- Mongo DB
+- Apache Cassandra
