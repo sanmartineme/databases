@@ -49,11 +49,21 @@ export const FarmatView = () => {
   }, []);
 
   const getData = async () => {
-    const dataFetched = await fetch(
-      "https://farmanet.minsal.cl/index.php/ws/getLocalesTurnos"
-    );
-    const dataJson = await dataFetched.json();
-    setData(dataJson);
+    try {
+      const dataFetched = await fetch(
+        "https://farmanet.minsal.cl/index.php/ws/getLocalesTurnos",
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+
+      const dataJson = await dataFetched.json();
+      setData(dataJson);
+    } catch (error) {
+      console.log("ERROR", error);
+    }
   };
 
   return (
