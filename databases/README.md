@@ -20,11 +20,12 @@ El alumno después del curso será capaz de:
 - Tendencias
 - Principales actores
 
-### II. Base de datos relacionales
+### [II. Base de datos relacionales](docs/01-relational-databases.md)
 
 - ¿Por qué existen?
 - Componentes de abstracción
 - Principales vendors
+- Conceptos básicos
 - Conceptos avanzados
   - Procedimientos almacenados y funciones
   - Triggers
@@ -36,7 +37,7 @@ El alumno después del curso será capaz de:
 
 (\*) Conceptual y no práctico.
 
-### III. Base de datos no relacionales
+### [III. Base de datos no relacionales](docs/02-non-relational-databases.md)
 
 - ¿Por qué existen?
 - Componentes de abstracción
@@ -58,7 +59,7 @@ El alumno después del curso será capaz de:
 ## 🔨 Herramientas a utilizar
 
 - Docker
-- Postgres
+- PostgreSQL
 - MS SQL Server
 - Mongo DB
 - Apache Cassandra

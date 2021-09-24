@@ -1,0 +1,27 @@
+COPY app.sales(
+    InvoiceItemNumber,
+    SaleDate,
+    StoreNumber,
+    StoreName,
+    Address,
+    City,
+    ZipCode,
+    StoreLocation,
+    CountyNumber,
+    County,
+    Category,
+    CategoryName,
+    VendorNumber,
+    VendorName,
+    ItemNumber,
+    ItemDescription,
+    Pack,
+    BottleVolume,
+    StateBottleCost,
+    StateBottleRetail,
+    BottlesSold,
+    SaleDollars,
+    VolumeSoldLiters,
+    VolumeSoldGallons
+)
+FROM '/files/sales.csv' DELIMITER ',' CSV HEADER;
