@@ -45,6 +45,48 @@ Lenguaje de manipulación de datos (DML: Data Manipulation Languange). Las sente
 - **DELETE**: elimina todos los registros de la tabla; no borra los espacios asignados a los
   registros.
 
+## Características
+
+Los sistemas de administración de bases de datos son usados para:
+
+- Permitir a los usuarios acceder y manipular la base de datos proveyendo métodos para construir sistemas de procesamiento de datos para aplicaciones que requieran acceso a los datos.
+
+- Proveer a los administradores las herramientas que les permitan ejecutar tareas de mantenimiento y administración de los datos.
+
+Algunas de sus características son:
+
+### Control de la Redundancia de Datos
+
+Este consiste en lograr una mínima cantidad de espacio de almacenamiento para almacenar los datos evitando la duplicación de la información. De esta manera se logran ahorros en el tiempo de procesamiento de la información, se tendrán menos inconsistencias, menores costos operativos y hará el mantenimiento más fácil.
+
+### Compartimiento de Datos
+
+Una de las principales características de las bases de datos, es que los datos pueden ser compartidos entre muchos usuarios simultáneamente, proveyendo, de esta manera, máxima eficiencia.
+
+### Mantenimiento de la Integridad
+
+La integridad de los datos es la que garantiza la precisión o exactitud de la información contenida en una base de datos. Los datos interrelacionados deben siempre representar información correcta a los usuarios.
+
+### Soporte para Control de Transacciones y Recuperación de Fallas
+
+Se conoce como transacción toda operación que se haga sobre la base de datos. Las transacciones deben por lo tanto ser controladas de manera que no alteren la integridad de la base de datos. La recuperación de fallas tiene que ver con la capacidad de un sistema DBMS de recuperar la información que se haya perdido durante una falla en el software o en el hardware.
+
+### Independencia de los Datos
+
+En las aplicaciones basadas en archivos, el programa de aplicación debe conocer tanto la organización de los datos como las técnicas que el permiten acceder a los datos. En los sistemas DBMS los programas de aplicación no necesitan conocer la organización de los datos en el disco duro. Este totalmente independiente de ello.
+
+### Seguridad
+
+La disponibilidad de los datos puede ser restringida a ciertos usuarios. Según los privilegios que posea cada usuario de la base de datos, podrá acceder a mayor información que otros.
+
+### Velocidad
+
+Los sistemas DBMS modernos poseen altas velocidades de respuesta y proceso.
+
+### Independencia del Hardware
+
+La mayoría de los sistemas DBMS están disponibles para ser instalados en múltiples plataformas de hardware.
+
 ## Estado actual y principales desafíos
 
 En los años 90 y principios del 2000, las bases de datos relacionales fueron evolucionando junto con Internet y los movimientos de código abierto, adicionalmente las compañías de Hardware eran capaces de proporcionar mejores componentes de procesamiento y almacenamiento cada vez a menor costo.

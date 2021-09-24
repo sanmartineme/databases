@@ -11,16 +11,16 @@ El alumno después del curso será capaz de:
 
 ## :mortar_board: Syllabus
 
-### I. Introducción
+### [I. Introducción](docs/00-intro.md)
 
 - ¿Qué es una base de datos?
 - Gestores de base de datos
 - Estado actual y principales desafíos
-- Arquitectura
+- Características
 - Tendencias
 - Principales actores
 
-### II. Base de datos relaciones
+### II. Base de datos relacionales
 
 - ¿Por qué existen?
 - Componentes de abstracción
