@@ -1,3 +1,5 @@
+<!-- rmarkdown v1 -->
+
 # 💾 Base de datos no relacionales 💾
 
 # ¿Por qué existen?
@@ -92,8 +94,6 @@ Carga masiva de archivo csv
 ```shell
 mongoimport -d store -c sales --type csv --file files/sales_sample.csv --headerline
 ```
-
-# Otros tipos de base de datos no relacionales
 
 **Nota**: los datos a utilizar son obtenidos de esta API: ()[https://www.binance.com/exchange-api/v2/public/asset-service/product/get-products]
 
