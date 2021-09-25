@@ -1,0 +1,1 @@
+CREATE TABLESPACE appspace LOCATION '/spaces/appspace';

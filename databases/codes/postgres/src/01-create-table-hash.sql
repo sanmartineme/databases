@@ -1,4 +1,4 @@
-CREATE TABLE app.sales (
+CREATE TABLE app.sales_sample_hash (
     InvoiceItemNumber VARCHAR(256),
     SaleDate DATE,
     StoreNumber INT,
@@ -23,11 +23,20 @@ CREATE TABLE app.sales (
     SaleDollars MONEY,
     VolumeSoldLiters FLOAT,
     VolumeSoldGallons FLOAT
-) PARTITION BY HASH(id);
+) 
+
+PARTITION BY HASH(InvoiceItemNumber);
+
 -- 3 particiones hash.
-CREATE TABLE app.sales_part1 PARTITION OF app.sales FOR
+CREATE TABLE app.sales_sample_hash_p1 PARTITION OF app.sales_sample_hash FOR
 VALUES WITH (modulus 3, remainder 0);
-CREATE TABLE app.sales_part2 PARTITION OF app.sales FOR
-VALUES WITH (modulus 3, remainder 0);
-CREATE TABLE app.sales_part3 PARTITION OF app.sales FOR
-VALUES WITH (modulus 3, remainder 0);
+CREATE TABLE app.sales_sample_hash_p2 PARTITION OF app.sales_sample_hash FOR
+VALUES WITH (modulus 3, remainder 1);
+CREATE TABLE app.sales_sample_hash_p3 PARTITION OF app.sales_sample_hash FOR
+VALUES WITH (modulus 3, remainder 2);
+
+-- Indice para búsquedas sobre fecha.
+CREATE INDEX idx_sales_sales_sample_hash_date ON app.sales_sample_hash(SaleDate);
+
+-- Indice para búsquedas sobre ciudad.
+CREATE INDEX idx_sales_sales_sample_hash_city ON app.sales_sample_hash(City);

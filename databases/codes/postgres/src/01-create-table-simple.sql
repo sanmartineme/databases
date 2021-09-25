@@ -1,4 +1,4 @@
-CREATE TABLE app.sales_sample_range (
+CREATE TABLE app.sales_sample (
     InvoiceItemNumber VARCHAR(256),
     SaleDate DATE,
     StoreNumber INT,
@@ -23,19 +23,11 @@ CREATE TABLE app.sales_sample_range (
     SaleDollars MONEY,
     VolumeSoldLiters FLOAT,
     VolumeSoldGallons FLOAT
-) 
-PARTITION BY RANGE(SaleDate);
-
--- Dos particiones por rango de fecha.
-CREATE TABLE app.sales_range_part_min_to_2014 PARTITION OF app.sales_sample_range FOR
-VALUES
-FROM (MINVALUE) TO ('2014-12-31');
-CREATE TABLE app.sales_range_part_2015_to_max PARTITION OF app.sales_sample_range FOR
-VALUES
-FROM ('2015-01-01') TO (MAXVALUE);
+)
+TABLESPACE appspace;
 
 -- Indice para búsquedas sobre fecha.
-CREATE INDEX idx_sales_sales_sample_range_date ON app.sales_sample_range(SaleDate);
+CREATE INDEX idx_sales_sales_sample_date ON app.sales_sample(SaleDate);
 
 -- Indice para búsquedas sobre ciudad.
-CREATE INDEX idx_sales_sales_sample_range_city ON app.sales_sample_range(City);
+CREATE INDEX idx_sales_sales_sample_city ON app.sales_sample(City);

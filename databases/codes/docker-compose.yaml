@@ -11,8 +11,9 @@ services:
     volumes:
       - ./data/postgresql:/var/lib/postgresql/data
       - ./files/:/files
+      - ./spaces:/spaces
     environment:
       - POSTGRES_PASSWORD=${DB_PASS}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_DB=${DB_NAME}
-    restart: always
+    restart: unless-stopped
