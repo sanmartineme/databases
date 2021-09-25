@@ -40,7 +40,7 @@ El alumno después del curso será capaz de:
 ### [III. Base de datos no relacionales](docs/02-non-relational-databases.md)
 
 - ¿Por qué existen?
-- Componentes de abstracción
+- Tipos de abstracción
 - Principales vendors
 - BBDD documental: Mongo DB
   - Conceptos base documental

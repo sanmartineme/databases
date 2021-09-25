@@ -25,7 +25,7 @@ CREATE TABLE app.sales_sample_hash (
     VolumeSoldGallons FLOAT
 ) 
 
-PARTITION BY HASH(InvoiceItemNumber);
+PARTITION BY HASH(InvoiceItemNumber, SaleDate, City);
 
 -- 3 particiones hash.
 CREATE TABLE app.sales_sample_hash_p1 PARTITION OF app.sales_sample_hash FOR

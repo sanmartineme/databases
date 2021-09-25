@@ -28,11 +28,10 @@ PARTITION BY RANGE(SaleDate);
 
 -- Dos particiones por rango de fecha.
 CREATE TABLE app.sales_range_part_min_to_2014 PARTITION OF app.sales_sample_range FOR
-VALUES
-FROM (MINVALUE) TO ('2014-12-31');
+VALUES FROM (MINVALUE) TO ('2015-01-01');
+
 CREATE TABLE app.sales_range_part_2015_to_max PARTITION OF app.sales_sample_range FOR
-VALUES
-FROM ('2015-01-01') TO (MAXVALUE);
+VALUES FROM ('2015-01-01') TO (MAXVALUE);
 
 -- Indice para búsquedas sobre fecha.
 CREATE INDEX idx_sales_sales_sample_range_date ON app.sales_sample_range(SaleDate);
