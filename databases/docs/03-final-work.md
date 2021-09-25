@@ -4,7 +4,7 @@
 
 - El trabajo es de caracter grupal (3 a 4 personas).
 
-## Problema 1: Problema de analisis de sentimientos (50%).
+## Problema 1: Problema de análisis de sentimientos (50%).
 
 Para las bandas de rock de habla inglesa más populares de los 90's se debe determinar si sus canciones poseen palabras con sentimientos positivos o negativos en base al estudio AFINN (https://www2.imm.dtu.dk/pubdb/pubs/6010-full.html).
 

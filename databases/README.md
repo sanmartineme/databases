@@ -65,4 +65,8 @@ El alumno después del curso será capaz de:
 - Mongo DB
 - Apache Cassandra
 
-## [Trabajo final](docs/03-final-work.md)
+## Anexo
+
+### [Trabajo final](docs/03-final-work.md)
+
+### Guía Docker
