@@ -69,4 +69,4 @@ El alumno después del curso será capaz de:
 
 ### [Trabajo final](docs/03-final-work.md)
 
-### Guía Docker
+### [Guía Docker](docs/04-docker.md)
