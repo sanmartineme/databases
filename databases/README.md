@@ -45,9 +45,10 @@ El alumno después del curso será capaz de:
 - BBDD documental: Mongo DB
   - Conceptos base documental
   - Operaciones CRUD
-- BBDD key-value: Apache Cassandra
-  - Conceptos de una base key-value
+- BBDD columnar: Apache Cassandra
+  - Conceptos de una base column store
   - Operaciones CRUD
+- BBDD key-value: Redis
 - Otros tipos de base de datos no relacionales
 
 ### IV. Criterios de selección
@@ -63,3 +64,5 @@ El alumno después del curso será capaz de:
 - MS SQL Server
 - Mongo DB
 - Apache Cassandra
+
+## [Trabajo final](docs/03-final-work.md)
