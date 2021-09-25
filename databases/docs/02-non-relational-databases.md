@@ -130,6 +130,9 @@ db.binanceSymbols.find({ c: { $lt: "100" } });
 
 ```bash
 mongo < files/helloWorld.js
+
+# Ejecutar script en una base de datos específica.
+mongo movies < files/insertToCollection.js
 ```
 
 ## BBDD columnares: Apache Cassandra.
